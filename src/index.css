@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #B33D26;
+  --color-secondary: #FAF6F0;
+  --color-accent: #4A3F35;
+  --color-neutral-light: #F8F4ED;
+  --color-neutral-dark: #5C5348;
+}
+
+@layer base {
+  body {
+    @apply bg-secondary text-accent font-sans;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+/* Custom styles for professional look */
+.btn-primary {
+  @apply bg-primary text-secondary px-8 py-3 rounded-md font-semibold transition-all;
+}
+
+.nav-link {
+  @apply text-accent hover:text-primary transition-colors duration-200 font-medium;
+}
+
+.section-padding {
+  @apply py-20 px-4 md:px-8;
+}
+
