@@ -9,18 +9,45 @@
 }
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+    /* Offset anchored sections so the sticky navbar doesn't cover headings */
+    scroll-padding-top: 5rem;
+  }
+
   body {
     @apply bg-secondary text-accent font-sans;
   }
-  
+
   h1, h2, h3, h4, h5, h6 {
     @apply font-serif;
   }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Subtle branded scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-neutral-light);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 9999px;
+}
+
 /* Custom styles for professional look */
 .btn-primary {
-  @apply bg-primary text-secondary px-8 py-3 rounded-md font-semibold transition-all;
+  @apply bg-primary text-secondary px-8 py-3 rounded-md font-semibold transition-all duration-300;
+}
+.btn-primary:hover {
+  filter: brightness(1.08);
 }
 
 .nav-link {

@@ -4,17 +4,26 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import MenuPage from './pages/MenuPage';
+import ScrollProgress from './components/ScrollProgress';
 
-// Scroll to top on route change
+// Scroll to top on route change (or to the hashed section once it's mounted)
 const ScrollToTop = () => {
   const { pathname, hash } = useLocation();
 
   useEffect(() => {
     if (hash) {
-      const element = document.getElementById(hash.slice(1));
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
+      // The target section may not be mounted yet on a fresh route change,
+      // so retry on the next frames until it appears.
+      let tries = 0;
+      const scroll = () => {
+        const element = document.getElementById(hash.slice(1));
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        } else if (tries++ < 10) {
+          requestAnimationFrame(scroll);
+        }
+      };
+      scroll();
     } else {
       window.scrollTo(0, 0);
     }
@@ -28,6 +37,7 @@ function App() {
     <Router>
       <div className="flex flex-col min-h-screen">
         <ScrollToTop />
+        <ScrollProgress />
         <Navbar />
         <div className="flex-grow">
           <Routes>

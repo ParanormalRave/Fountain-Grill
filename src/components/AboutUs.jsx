@@ -1,68 +1,97 @@
-import { delay, motion } from 'framer-motion'
+import { motion } from 'framer-motion';
+import { fadeLeft, fadeRight, fadeUp, staggerContainer, smooth } from '../utils/motion';
+import { site } from '../data/site';
+
 const AboutUs = () => {
-  const fadeIn = {
-    hidden: { opacity: 0, x: -50 },
-    visible: { opacity: 1, x: 0 },
-  }
-  const fadeSlide = {
-    hidden: { opacity: 0, x: 50 },
-    visible: { opacity: 1, x: 0 },
-  }
   return (
-    <section id="about" className="section-padding bg-secondary">
+    <section id="about" className="section-padding bg-secondary overflow-hidden">
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center gap-12">
           <div className="md:w-1/2">
-            <motion.div
-              variants={fadeIn}
+            <motion.img
+              variants={fadeLeft}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true }}
-              transition={{ duration: 1, delay: 0.3 }}
-            >
-              <img
-                src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&q=80&w=1200"
-                alt="Our Story"
-                className="rounded-lg shadow-2xl w-full h-[500px] object-cover"
-              />
-            </motion.div>
+              viewport={{ once: true, amount: 0.3 }}
+              transition={smooth}
+              src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&q=80&w=1200"
+              alt="Inside Fountain Grill"
+              className="rounded-lg shadow-2xl w-full h-[500px] object-cover"
+            />
           </div>
           <div className="md:w-1/2">
             <motion.div
-              variants={fadeSlide}
+              variants={staggerContainer(0.12)}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true }}
-              transition={{ duration: 1, delay: 0.3 }}
+              viewport={{ once: true, amount: 0.3 }}
             >
-              <h2 className="text-xl md:text-5xl font-serif font-bold text-primary mb-4">
+              <motion.span
+                variants={fadeRight}
+                transition={smooth}
+                className="uppercase tracking-[0.3em] text-primary text-sm font-semibold"
+              >
                 Our Story
-              </h2>
-              <p className="text-lg text-accent mb-6 leading-relaxed">
-                Welcome to Fountain Grill, your go-to destination for an American-themed dining
-                experience located in Ashburn, Virginia. Our full-service bar and grill offers a
-                diverse menu that showcases everything from hearty burgers and tantalizing wings to
-                scrumptious sandwiches, flavorful entrees, and fresh salads.
-              </p>
-              <p className="text-lg text-accent mb-6 leading-relaxed">
-                At Fountain Grill, we’re passionate about providing you with the highest quality
-                ingredients, ensuring that each dish we serve is not only delicious but also made
-                with care and attention. Our commitment to freshness and flavor is evident in every
-                bite, and our friendly and attentive staff is dedicated to ensuring that your dining
-                experience is nothing short of exceptional.
-              </p>
-              <p className="text-lg text-accent mb-6 leading-relaxed">
-                We’re proud to be a part of the local community and to have the opportunity to serve
-                you. Whether you’re joining us for a meal with friends or celebrating a special
-                occasion, we look forward to welcoming you to Fountain Grill and providing you with
-                an unforgettable dining experience.
-              </p>
+              </motion.span>
+              <motion.h2
+                variants={fadeRight}
+                transition={smooth}
+                className="text-4xl md:text-5xl font-serif font-bold text-accent mt-2 mb-6"
+              >
+                A Neighborhood Bar &amp; Grill
+              </motion.h2>
+              <motion.p
+                variants={fadeRight}
+                transition={smooth}
+                className="text-lg text-accent mb-6 leading-relaxed"
+              >
+                Welcome to Fountain Grill, your go-to destination for an
+                American-themed dining experience in Ashburn, Virginia. Our
+                full-service bar and grill offers a diverse menu — from hearty
+                burgers and tantalizing wings to scrumptious sandwiches,
+                flavorful entrees, and fresh salads.
+              </motion.p>
+              <motion.p
+                variants={fadeRight}
+                transition={smooth}
+                className="text-lg text-accent mb-6 leading-relaxed"
+              >
+                We&rsquo;re passionate about the highest quality ingredients,
+                ensuring each dish is not only delicious but made with care. Our
+                commitment to freshness and flavor shows in every bite, and our
+                friendly staff is dedicated to making your visit exceptional.
+              </motion.p>
+              <motion.p
+                variants={fadeRight}
+                transition={smooth}
+                className="text-lg text-accent mb-8 leading-relaxed"
+              >
+                Proudly co-owned by {site.owners[0]} and {site.owners[1]},
+                we&rsquo;re grateful to be part of this community — and we look
+                forward to welcoming you, whether for a meal with friends or a
+                special celebration.
+              </motion.p>
+
+              <motion.div
+                variants={fadeUp}
+                transition={smooth}
+                className="flex flex-wrap gap-3"
+              >
+                {site.perks.map((perk) => (
+                  <span
+                    key={perk}
+                    className="px-4 py-2 rounded-full bg-neutral-light text-accent text-sm font-medium"
+                  >
+                    {perk}
+                  </span>
+                ))}
+              </motion.div>
             </motion.div>
           </div>
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default AboutUs
+export default AboutUs;
