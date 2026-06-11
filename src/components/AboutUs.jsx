@@ -5,9 +5,9 @@ import { site } from '../data/site';
 const AboutUs = () => {
   return (
     <section id="about" className="section-padding bg-secondary overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="flex flex-col md:flex-row items-center gap-12">
-          <div className="md:w-1/2">
+      <div className="max-w-7xl mx-auto">
+        <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+          <div className="md:w-1/2 w-full">
             <motion.img
               variants={fadeLeft}
               initial="hidden"
@@ -16,10 +16,10 @@ const AboutUs = () => {
               transition={smooth}
               src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&q=80&w=1200"
               alt="Inside Fountain Grill"
-              className="rounded-lg shadow-2xl w-full h-[500px] object-cover"
+              className="rounded-lg shadow-2xl w-full h-[320px] sm:h-[420px] md:h-[500px] object-cover"
             />
           </div>
-          <div className="md:w-1/2">
+          <div className="md:w-1/2 w-full">
             <motion.div
               variants={staggerContainer(0.12)}
               initial="hidden"
@@ -36,7 +36,7 @@ const AboutUs = () => {
               <motion.h2
                 variants={fadeRight}
                 transition={smooth}
-                className="text-4xl md:text-5xl font-serif font-bold text-accent mt-2 mb-6"
+                className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-accent mt-2 mb-6"
               >
                 A Neighborhood Bar &amp; Grill
               </motion.h2>

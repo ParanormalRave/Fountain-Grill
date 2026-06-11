@@ -18,14 +18,14 @@ const HonorFlight = () => {
           <motion.h2
             variants={fadeUp}
             transition={smooth}
-            className="text-4xl md:text-5xl font-serif font-bold mb-6"
+            className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold mb-6"
           >
             Honor Flight Meals
           </motion.h2>
           <motion.p
             variants={fadeUp}
             transition={smooth}
-            className="text-xl mb-12 max-w-3xl mx-auto opacity-90"
+            className="text-lg sm:text-xl mb-10 sm:mb-12 max-w-3xl mx-auto opacity-90"
           >
             We are proud to deliver delicious meals to our beloved veterans
             throughout the DMV. It is our privilege to honor those who have

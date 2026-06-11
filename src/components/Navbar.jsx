@@ -18,15 +18,15 @@ const Navbar = () => {
   return (
     <nav className="bg-secondary border-b border-neutral-light sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-20">
+        <div className="flex justify-between h-16 sm:h-20">
           <div className="flex items-center">
             <Link to="/">
-              <img src={logo} alt="Fountain Grill" className="h-10" />
+              <img src={logo} alt="Fountain Grill" className="h-9 sm:h-10" />
             </Link>
           </div>
 
           {/* Desktop Nav */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center space-x-6 xl:space-x-8">
             <Link to="/" className="nav-link">
               Home
             </Link>
@@ -111,7 +111,7 @@ const Navbar = () => {
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden flex items-center">
+          <div className="lg:hidden flex items-center">
             <button
               onClick={() => setIsMobileNavOpen(!isMobileNavOpen)}
               className="text-accent hover:text-primary focus:outline-none"
@@ -152,7 +152,7 @@ const Navbar = () => {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3, ease: 'easeInOut' }}
-            className="md:hidden bg-secondary border-b border-neutral-light overflow-hidden"
+            className="lg:hidden bg-secondary border-b border-neutral-light overflow-hidden"
           >
             <div className="px-2 pt-2 pb-4 space-y-1 sm:px-3">
               <Link

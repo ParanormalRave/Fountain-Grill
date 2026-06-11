@@ -5,9 +5,9 @@ import { site } from '../data/site';
 const Contact = () => {
   return (
     <section id="contact" className="section-padding bg-neutral-light">
-      <div className="max-w-7xl mx-auto px-4">
-        <motion.div {...reveal()} className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-serif font-bold text-accent mb-4">
+      <div className="max-w-7xl mx-auto">
+        <motion.div {...reveal()} className="text-center mb-12 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-accent mb-4">
             Visit Us
           </h2>
           <p className="text-neutral-dark max-w-2xl mx-auto">
@@ -16,7 +16,7 @@ const Contact = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
           {/* Contact Info */}
           <motion.div
             variants={staggerContainer(0.12)}
@@ -107,7 +107,7 @@ const Contact = () => {
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
             transition={smooth}
-            className="bg-secondary p-8 rounded-lg shadow-sm border border-neutral-light"
+            className="bg-secondary p-6 sm:p-8 rounded-lg shadow-sm border border-neutral-light"
           >
             <form className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>

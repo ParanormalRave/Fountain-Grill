@@ -21,7 +21,7 @@ const GiftCards = () => {
           className="bg-neutral-light rounded-2xl overflow-hidden shadow-xl flex flex-col md:flex-row"
         >
           <motion.div
-            className="md:w-1/2 p-12 flex flex-col justify-center"
+            className="md:w-1/2 p-7 sm:p-10 md:p-12 flex flex-col justify-center"
             variants={staggerContainer(0.1, 0.1)}
             initial="hidden"
             whileInView="visible"
@@ -30,7 +30,7 @@ const GiftCards = () => {
             <motion.h2
               variants={fadeRight}
               transition={smooth}
-              className="text-4xl md:text-5xl font-serif font-bold text-accent mb-6"
+              className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-accent mb-6"
             >
               Give the Gift of Flavor
             </motion.h2>
@@ -76,7 +76,7 @@ const GiftCards = () => {
               Purchase Gift Card
             </motion.a>
           </motion.div>
-          <div className="md:w-1/2 relative min-h-[400px] overflow-hidden">
+          <div className="md:w-1/2 relative min-h-[240px] sm:min-h-[340px] md:min-h-[400px] overflow-hidden">
             <img
               src="https://images.unsplash.com/photo-1556742044-3c52d6e88c62?auto=format&fit=crop&q=80&w=1200"
               alt="Gift Cards"

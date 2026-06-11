@@ -33,8 +33,8 @@ const MenuPreview = () => {
   return (
     <section id="menu" className="section-padding bg-neutral-light">
       <div className="max-w-7xl mx-auto">
-        <motion.div {...reveal()} className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-serif font-bold text-accent mb-4">
+        <motion.div {...reveal()} className="text-center mb-12 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-accent mb-4">
             Our Menu
           </h2>
           <p className="text-neutral-dark max-w-2xl mx-auto">
@@ -49,7 +49,7 @@ const MenuPreview = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-12"
         >
           {categories.map((cat) => (
             <motion.div key={cat.name} variants={fadeUp} transition={smooth}>

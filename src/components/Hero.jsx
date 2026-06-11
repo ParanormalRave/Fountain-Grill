@@ -14,7 +14,7 @@ const item = {
 
 const Hero = () => {
   return (
-    <div className="relative h-[88vh] w-full overflow-hidden">
+    <div className="relative h-[88vh] min-h-[560px] w-full overflow-hidden">
       {/* Background Video (opening video — kept as-is) */}
       <video
         autoPlay
@@ -41,34 +41,34 @@ const Hero = () => {
       >
         <motion.span
           variants={item}
-          className="uppercase tracking-[0.35em] text-secondary/90 text-sm md:text-base mb-5 drop-shadow"
+          className="uppercase tracking-[0.2em] sm:tracking-[0.35em] text-secondary/90 text-xs sm:text-sm md:text-base mb-4 sm:mb-5 drop-shadow"
         >
           Ashburn, Virginia
         </motion.span>
         <motion.h1
           variants={item}
-          className="text-5xl md:text-7xl text-secondary font-serif font-bold mb-6 drop-shadow-lg"
+          className="text-4xl sm:text-5xl md:text-7xl text-secondary font-serif font-bold mb-4 sm:mb-6 drop-shadow-lg"
         >
           Taste the Tradition
         </motion.h1>
         <motion.p
           variants={item}
-          className="text-xl md:text-2xl text-secondary mb-10 max-w-2xl font-light drop-shadow-md"
+          className="text-lg sm:text-xl md:text-2xl text-secondary mb-8 sm:mb-10 max-w-2xl font-light drop-shadow-md"
         >
           {site.tagline}
         </motion.p>
-        <motion.div variants={item} className="flex flex-wrap gap-4 justify-center">
+        <motion.div variants={item} className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 justify-center w-full sm:w-auto max-w-xs sm:max-w-none">
           <a
             href={site.links.order}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-primary text-lg shadow-xl hover:scale-105 transform transition-all"
+            className="btn-primary text-center text-base sm:text-lg shadow-xl hover:scale-105 transform transition-all"
           >
             Order Now
           </a>
           <Link
             to="/menu/food"
-            className="text-lg px-8 py-3 rounded-md font-semibold border-2 border-secondary text-secondary hover:bg-secondary hover:text-accent transition-all"
+            className="text-center text-base sm:text-lg px-8 py-3 rounded-md font-semibold border-2 border-secondary text-secondary hover:bg-secondary hover:text-accent transition-all"
           >
             View Menu
           </Link>

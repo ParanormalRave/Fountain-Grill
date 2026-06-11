@@ -15,7 +15,7 @@ const MenuPage = () => {
   return (
     <div className="bg-secondary min-h-screen">
       {/* Header banner */}
-      <div className="bg-accent text-secondary py-16 px-4">
+      <div className="bg-accent text-secondary py-12 sm:py-16 px-4">
         <motion.div
           className="max-w-4xl mx-auto text-center"
           initial="hidden"
@@ -32,7 +32,7 @@ const MenuPage = () => {
           <motion.h1
             variants={fadeUp}
             transition={smooth}
-            className="text-5xl md:text-6xl font-serif font-bold mb-4"
+            className="text-4xl sm:text-5xl md:text-6xl font-serif font-bold mb-4"
           >
             Our Menus
           </motion.h1>
@@ -48,15 +48,15 @@ const MenuPage = () => {
       </div>
 
       {/* Tabs */}
-      <div className="sticky top-20 z-30 bg-secondary/95 backdrop-blur border-b border-neutral-light">
-        <div className="max-w-4xl mx-auto px-4 flex flex-wrap justify-center gap-2 py-4">
+      <div className="sticky top-16 sm:top-20 z-30 bg-secondary/95 backdrop-blur border-b border-neutral-light">
+        <div className="max-w-4xl mx-auto px-4 flex flex-wrap justify-center gap-2 py-3 sm:py-4">
           {menuTabs.map((tab) => {
             const isActive = tab.key === activeKey;
             return (
               <button
                 key={tab.key}
                 onClick={() => navigate(`/menu/${tab.key}`)}
-                className={`relative px-5 py-2 rounded-full text-sm font-semibold transition-colors duration-300 ${
+                className={`relative px-4 sm:px-5 py-2 rounded-full text-sm font-semibold transition-colors duration-300 ${
                   isActive
                     ? 'text-secondary'
                     : 'text-accent hover:text-primary'
@@ -77,7 +77,7 @@ const MenuPage = () => {
       </div>
 
       {/* Sections */}
-      <div className="max-w-5xl mx-auto px-4 py-16">
+      <div className="max-w-5xl mx-auto px-4 py-12 sm:py-16">
         <AnimatePresence mode="wait">
           <motion.div
             key={activeKey}

@@ -1,0 +1,5 @@
+Welcome to Fountain Grill, your go-to destination for an American-themed dining experience located in Ashburn, Virginia. Our full-service bar and grill offers a diverse menu that showcases everything from hearty burgers and tantalizing wings to scrumptious sandwiches, flavorful entrees, and fresh salads.
+
+At Fountain Grill, we’re passionate about providing you with the highest quality ingredients, ensuring that each dish we serve is not only delicious but also made with care and attention. Our commitment to freshness and flavor is evident in every bite, and our friendly and attentive staff is dedicated to ensuring that your dining experience is nothing short of exceptional.
+
+We’re proud to be a part of the local community and to have the opportunity to serve you. Whether you’re joining us for a meal with friends or celebrating a special occasion, we look forward to welcoming you to Fountain Grill and providing you with an unforgettable dining experience.

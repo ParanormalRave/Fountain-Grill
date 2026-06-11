@@ -13,14 +13,25 @@
     scroll-behavior: smooth;
     /* Offset anchored sections so the sticky navbar doesn't cover headings */
     scroll-padding-top: 5rem;
+    /* Guard against any stray element forcing the page wider than the
+       viewport. `clip` (unlike `hidden`) doesn't break sticky positioning. */
+    overflow-x: clip;
   }
 
   body {
     @apply bg-secondary text-accent font-sans;
+    /* Belt-and-suspenders: never allow horizontal scroll on small screens. */
+    overflow-x: clip;
+    max-width: 100%;
   }
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-serif;
+  }
+
+  /* Media should never push past its container on narrow screens. */
+  img, video, iframe, svg {
+    max-width: 100%;
   }
 }
 
@@ -55,6 +66,6 @@
 }
 
 .section-padding {
-  @apply py-20 px-4 md:px-8;
+  @apply py-14 sm:py-20 px-4 sm:px-6 md:px-8;
 }
 
